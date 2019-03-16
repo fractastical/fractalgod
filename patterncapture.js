@@ -1,40 +1,72 @@
 
 //feed in a array of digits, the pattern capturer will assess when the pattern repeats itself
 
-function findNumberSeriesPattern(numberSeries[])
+function findNumberSeriesPattern(numberSeries)
 {
   var i=0;
   var firstPosition = numberSeries[i];
   var counter;
-  for (i=1;i<numberSeries.length,i++)
+  var maxSeriesLength  = 1;
+  var currentPattern = [];
+  var longestPattern = [];
+
+  // start at second position
+  for (i=1;i<numberSeries.length;i++)
   {
-      if(numberSeries[i] = firstPostion)
-        var j = i;
-        counter=1;
-        while(numberSeries[j] == numberSeries[1+counter])
-        {
-          console.log('series of ' + counter + 'found');
-          counter++;
-          j++;
+      console.log("a1:",numberSeries[i]," fp:",firstPosition, " i:", i);
+      if(numberSeries[i] == firstPosition)
+      {
+          console.log("match");
+          var j = i + 1;
+          counter = 1;
+          currentPattern.push(firstPosition);
+          console.log("a2:",numberSeries[j]," b:",numberSeries[counter]," count:",counter);
+          while(numberSeries[j] == numberSeries[counter])
+          {
+            console.log("match2");
+
+            currentPattern.push(numberSeries[j]);
+            if (counter > maxSeriesLength) {
+              maxSeriesLength = counter;
+              longestPattern = currentPattern;
+
+            }
+
+            console.log('series of ' + counter  + 'found');
+            counter += 1;
+            j += 1;
+            console.log("a3:",numberSeries[j]," b:",numberSeries[counter]," count:",counter);
+
+          }
+
         }
   }
-  console.log('max counter length was: ' + counter);
+  console.log('max counter length was: ' + maxSeriesLength);
+  console.log('longest pattern was: ' + longestPattern);
 
 }
 
 var fibonacii = [1,1];
-for (i=0;i<100,i++)
+for (i=0;i<100;i++)
 {
   fibonacii.push(fibonacii[i]+fibonacii[i+1]);
 }
 
 var fibonaciiMod9 = [];
-for (i=0;i<100,i++)
+for (i=0;i<100;i++)
 {
-  fibonaciiMod9.push(Math.modulus(fibonacii[i],0)]);
+  fibonaciiMod9.push(fibonacii[i] % 9);
 }
 
-var easyPattern [1,2,3,1,2,3,1,2,3];
+// var easyPattern = [1,2,3,1,2,3,1,2,3];
+// var easyPattern2 = [1,2,3,4,5,1,2,3,4,5];
+// var easyPattern3 = [7,2,5,5,6,7,2,5,5,6,7,2,5,5,6];
+// var easyPattern4 = [7,2,5,5,6,7,2,5,5,6,7,2,5,5,6];
+
+console.log(fibonaciiMod9);
+
+// findNumberSeriesPattern(easyPattern2);
+// findNumberSeriesPattern(easyPattern3);
 
 findNumberSeriesPattern(fibonaciiMod9);
 
