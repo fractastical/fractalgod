@@ -58,6 +58,7 @@ for (i=0;i<100;i++)
   fibonaciiMod9.push(fibonacii[i] % 9);
 }
 
+
 // var easyPattern = [1,2,3,1,2,3,1,2,3];
 // var easyPattern2 = [1,2,3,4,5,1,2,3,4,5];
 // var easyPattern3 = [7,2,5,5,6,7,2,5,5,6,7,2,5,5,6];
