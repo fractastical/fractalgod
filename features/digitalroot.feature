@@ -5,7 +5,7 @@ Feature: Simple maths
   As a developer
   I want to increment variables
 
-  Scenario: easy root
+  Scenario: get a simple digital root
       Given a variable set to 22
       When I calculate the digital root
       Then the root should be 4
